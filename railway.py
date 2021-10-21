@@ -33,7 +33,7 @@ def admin():
 
 def check():
 
-    uid = int("\n\tEnter your user id : ")
+    uid = int(input(("\n\tEnter your user id : ")))
     cur.execute("""SELECT * FROM CLIENT WHERE u_id = ?""",(uid,))
     data = cur.fetchall()
     for i in data:
@@ -76,9 +76,10 @@ def receipt(uid):
     no = i[2]
     cost = i[3]
     print("\f")
-    print("Name = ",name)
-    print("total number of seats = ",no)
-    print("total cost paid = ",cost)
+    print("\tName = ",name)
+    print("\ttotal number of seats = ",no)
+    print("\ttotal cost paid = ",cost)
+    print("\tuid = ",i[0])
     n = 0
     while n!= 1:
         n = int(input("\n\tpress one to continue "))
